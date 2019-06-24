@@ -22,13 +22,20 @@ FBullCowGame BCGame;
 int main()
 {
 	BCGame.Reset();
-	constexpr int32 WORD_LENGTH=5;
-	constexpr int32 NUMBER_OF_TURNS = 5;
 	//introduce the game
-	PrintIntro(WORD_LENGTH);
-	do {
-		PlayGame(NUMBER_OF_TURNS);
-	} while (AskToPlayAgain());
+	int32 MaxTries = BCGame.GetMaxTries();
+	PrintIntro(BCGame.GetHiddenWordLength());
+	for (int32 count = 1; count <= MaxTries;count++) {
+		FText Guess = GetGuess();
+
+		EGuessStatus Status = BCGame.CheckGuessValidity(Guess);
+
+		FBullCowCount BullCowCount = BCGame.SubmitGuess(Guess);
+
+		std::cout << "Bulls = "<<BullCowCount.Bulls;
+		std::cout << ".Cows = " << BullCowCount.Cows;
+		std::cout << std::endl;
+	}
 
 	return 0;
 }
@@ -39,7 +46,7 @@ void PrintIntro(int32 WORD_Length)
 	std::cout << "Can you guess the " << WORD_Length << " letter isogram I'm thinking of? \n\n";
 }
 
-FText GetGuess() 
+FText GetGuess() // TODO change to 
 {
 	FText Guess;
 	int32 CurrentTry = BCGame.GetCurrentTry();
