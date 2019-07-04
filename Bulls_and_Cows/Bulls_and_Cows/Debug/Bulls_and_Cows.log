@@ -1,4 +1,4 @@
 ﻿  FBullCowGame.cpp
-f:\bulls&cows\bulls-and-cows\bulls_and_cows\bulls_and_cows\fbullcowgame.cpp(83): warning C4018: '<': signed/unsigned mismatch
-f:\bulls&cows\bulls-and-cows\bulls_and_cows\bulls_and_cows\fbullcowgame.cpp(97): warning C4018: '<': signed/unsigned mismatch
+f:\bulls&cows\bulls-and-cows\bulls_and_cows\bulls_and_cows\fbullcowgame.cpp(80): warning C4018: '<': signed/unsigned mismatch
+f:\bulls&cows\bulls-and-cows\bulls_and_cows\bulls_and_cows\fbullcowgame.cpp(94): warning C4018: '<': signed/unsigned mismatch
   Bulls_and_Cows.vcxproj -> F:\Bulls&Cows\Bulls-and-Cows\Bulls_and_Cows\Debug\Bulls_and_Cows.exe

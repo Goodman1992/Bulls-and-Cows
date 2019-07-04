@@ -22,18 +22,15 @@ int32 FBullCowGame::GetCurrentTry() const { return MyCurrentTry;}
 
 EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess)
 {
-	
 	// otherwise, return OK
 	if (Guess.length() != GetHiddenWordLength()) { // if the guess length is wrong, return an error
 		return EGuessStatus::Wrong_Length;
-	}
-	else if (!Islowercase(Guess)) {	// if the guess isn't all lower case, return an error{
+	}	else if (!Islowercase(Guess)) {	// if the guess isn't all lower case, return an error
+		std::cout << "pk";
 		return EGuessStatus::Not_Lowercase;
-	}
-	else if (!CheckIsogram(Guess)) {  // if the guess isn't a isogram, return an error
+	}	else if (!CheckIsogram(Guess)) {  // if the guess isn't a isogram, return an error
 		return EGuessStatus::Not_Isogram;
-	}
-	else {
+	}	else {
 		return EGuessStatus::OK;
 	}
 	

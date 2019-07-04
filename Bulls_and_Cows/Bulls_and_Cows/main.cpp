@@ -50,6 +50,8 @@ FText GetValidGuess()
 	FText Guess;
 	do {
 		int32 CurrentTry = BCGame.GetCurrentTry();
+		std::cout << "Try " << CurrentTry << ". Enter the guess:";
+		std::getline(std::cin, Guess);
 		EGuessStatus Status = BCGame.CheckGuessValidity(Guess);
 		switch (Status)
 		{
@@ -61,7 +63,6 @@ FText GetValidGuess()
 			std::cout << "Please enter all lower case letters.\n";
 		default:
 			//assume the guess is valid
-			break;
 		}
 		std::cout << "Try " << CurrentTry << ". Enter the guess: ";
 		std::getline(std::cin, Guess);
